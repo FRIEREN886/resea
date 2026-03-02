@@ -1,0 +1,7 @@
+{
+    "clangd.arguments": [
+        "--compile-commands-dir=c:\\Users\\32991\\Desktop\\0501_freertos\\out\\freertos\\Target_1"
+    ],
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "cmake.sourceDirectory": "C:/Users/32991/Desktop/0501_freertos/tmp"
+}

@@ -1,0 +1,9 @@
+# ninja log v7
+1	111	7941465216978812	freertos+Target_1/src/freertos+Target_1-stamp/freertos+Target_1-mkdir	d4be75a8ebf42f03
+1	111	7941465216978812	C:/Users/32991/Desktop/0501_freertos/tmp/freertos+Target_1/src/freertos+Target_1-stamp/freertos+Target_1-mkdir	d4be75a8ebf42f03
+111	212	7941465217991693	freertos+Target_1/src/freertos+Target_1-stamp/freertos+Target_1-download	adae29d7dfabd34e
+111	212	7941465217991693	C:/Users/32991/Desktop/0501_freertos/tmp/freertos+Target_1/src/freertos+Target_1-stamp/freertos+Target_1-download	adae29d7dfabd34e
+212	310	7941465218973332	freertos+Target_1/src/freertos+Target_1-stamp/freertos+Target_1-update	2eac16805366affd
+212	310	7941465218973332	C:/Users/32991/Desktop/0501_freertos/tmp/freertos+Target_1/src/freertos+Target_1-stamp/freertos+Target_1-update	2eac16805366affd
+310	411	7941465219986938	freertos+Target_1/src/freertos+Target_1-stamp/freertos+Target_1-patch	609287e82b7504f2
+310	411	7941465219986938	C:/Users/32991/Desktop/0501_freertos/tmp/freertos+Target_1/src/freertos+Target_1-stamp/freertos+Target_1-patch	609287e82b7504f2

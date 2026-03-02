@@ -1,0 +1,5 @@
+cbuild-pack:
+  resolved-packs:
+    - resolved-pack: Renesas::RA_DFP@4.6.0
+      selected-by-pack:
+        - Renesas::RA_DFP@^4.5.0

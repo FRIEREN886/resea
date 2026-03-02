@@ -1,0 +1,11 @@
+# Target labels
+ freertos+Target_1
+# Source files and their labels
+C:/Users/32991/Desktop/0501_freertos/tmp/CMakeFiles/freertos+Target_1-build
+C:/Users/32991/Desktop/0501_freertos/tmp/CMakeFiles/freertos+Target_1-build.rule
+C:/Users/32991/Desktop/0501_freertos/tmp/freertos+Target_1/src/freertos+Target_1-stamp/freertos+Target_1-build.rule
+C:/Users/32991/Desktop/0501_freertos/tmp/freertos+Target_1/src/freertos+Target_1-stamp/freertos+Target_1-configure.rule
+C:/Users/32991/Desktop/0501_freertos/tmp/freertos+Target_1/src/freertos+Target_1-stamp/freertos+Target_1-patch.rule
+C:/Users/32991/Desktop/0501_freertos/tmp/freertos+Target_1/src/freertos+Target_1-stamp/freertos+Target_1-update.rule
+C:/Users/32991/Desktop/0501_freertos/tmp/freertos+Target_1/src/freertos+Target_1-stamp/freertos+Target_1-download.rule
+C:/Users/32991/Desktop/0501_freertos/tmp/freertos+Target_1/src/freertos+Target_1-stamp/freertos+Target_1-mkdir.rule

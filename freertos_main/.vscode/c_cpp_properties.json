@@ -1,0 +1,37 @@
+{
+    "configurations": [
+        {
+            "name": "RA6M5 FreeRTOS",
+            "includePath": [
+                "${workspaceFolder}/ra/fsp/inc",
+                "${workspaceFolder}/ra/fsp/inc/api",
+                "${workspaceFolder}/ra/fsp/inc/instances",
+                "${workspaceFolder}/ra/fsp/src/rm_freertos_port",
+                "${workspaceFolder}/ra/arm/CMSIS_5/CMSIS/Core/Include",
+                "${workspaceFolder}/ra_cfg/fsp_cfg",
+                "${workspaceFolder}/ra_cfg/fsp_cfg/bsp",
+                "${workspaceFolder}/ra_cfg/aws",
+                "${workspaceFolder}/ra_gen",
+                "${workspaceFolder}/RTE/_Target_1",
+                "${workspaceFolder}/applications",
+                "${workspaceFolder}/drivers",
+                "${workspaceFolder}/main",
+                "${workspaceFolder}/src",
+                "${workspaceFolder}/ra/aws/FreeRTOS/FreeRTOS/Source/include",
+                "${workspaceFolder}/ra/aws/FreeRTOS/FreeRTOS/Source/portable/MemMang"
+            ],
+            "defines": [
+                "__MICROLIB",
+                "_RTE_",
+                "RENESAS_CORTEX_M33",
+                "__ARM_ARCH_8M_MAIN__=1"
+            ],
+            "compilerPath": "",
+            "cStandard": "c99",
+            "cppStandard": "c++11",
+            "intelliSenseMode": "gcc-arm",
+            "forcedInclude": []
+        }
+    ],
+    "version": 4
+}

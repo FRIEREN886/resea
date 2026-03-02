@@ -1,0 +1,133 @@
+{
+    //     "version": "0.2.0",
+    //     "configurations": [
+    //         {
+    //             "cwd": "${workspaceFolder}",
+    //             "executable": "./Objects/mdk_demo.axf",
+    //             "name": "Debug with PyOCD",
+    //             "request": "attach",
+    //             "type": "cortex-debug",
+    //             "runToEntryPoint": "main",
+    //             "showDevDebugOutput": "raw",
+    //             "servertype": "pyocd",
+    //             "serverArgs": [
+    //                 "--pack", "D:/Renesas_E2S_Pyocd/Renesas.RA_DFP.4.5.0.pack",
+    //                 "--no-load-gdbinit"
+    //             ],
+    //             "gdbPath": "C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/arm-none-eabi-gdb.exe",
+    //         },
+    //         {
+    //             "name": "Cortex Debug (J-Link)",
+    //             "cwd": "${workspaceFolder}",
+    //             "executable": "./Objects/mdk_demo.axf",
+    //             "request": "launch",
+    //             "type": "cortex-debug",
+    //             "runToEntryPoint": "main",
+    //             "servertype": "jlink",
+    //             "device": "R7FA6M5BF"
+    //         }
+    //     ]
+    // }
+    // {
+    //     "version": "0.2.0",
+    //     "configurations": [
+    //         {
+    //             "name": "Attach to PyOCD",
+    //             "type": "cortex-debug",
+    //             "request": "attach",
+    //             "servertype": "external",
+    //             "gdbTarget": "localhost:3333",
+    //             "cwd": "${workspaceFolder}",
+    //             "executable": "./Objects/mdk_demo.axf",
+    //             "runToEntryPoint": "main",
+    //             "showDevDebugOutput": "raw",
+    //             "gdbPath": "C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/arm-none-eabi-gdb.exe"
+    //         }
+    //     ]
+    // }
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "🚀 Debug with PyOCD (一键启动)",
+            "type": "cortex-debug",
+            "request": "attach",
+            "servertype": "external",
+            "gdbTarget": "localhost:3333",
+            "cwd": "${workspaceFolder}",
+            "executable": "./Objects/mdk_demo.axf",
+            "runToEntryPoint": "main",
+            "showDevDebugOutput": "raw",
+            "gdbPath": "C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/arm-none-eabi-gdb.exe",
+            "preLaunchTask": "Start PyOCD",
+            "postDebugTask": "Stop PyOCD"
+        },
+        {
+            "name": "CMSIS_DAP@pyOCD (launch)",
+            "type": "gdbtarget",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/",
+            "program": "Objects/mdk_demo.axf",
+            "gdb": "arm-none-eabi-gdb",
+            "auxiliaryGdb": true,
+            "preLaunchTask": "CMSIS Load",
+            "initCommands": [
+                "monitor reset halt",
+                "tbreak main"
+            ],
+            "customResetCommands": [
+                "monitor reset halt",
+                "maintenance flush register-cache",
+                "maintenance flush dcache",
+                "tbreak main",
+                "continue"
+            ],
+            "target": {
+                "server": "pyocd",
+                "serverParameters": [
+                    "gdbserver",
+                    "--probe",
+                    "cmsisdap:",
+                    "--connect",
+                    "attach",
+                    "--cbuild-run",
+                    "${command:cmsis-csolution.getCbuildRunFile}",
+                    "--quiet",
+                    "--log",
+                    "*.cbuild_run,*server=info"
+                ],
+                "port": "3333"
+            },
+            "cmsis": {
+                "cbuildRunFile": "${command:cmsis-csolution.getCbuildRunFile}",
+                "updateConfiguration": "auto"
+            }
+        },
+        {
+            "name": "CMSIS_DAP@pyOCD (attach)",
+            "type": "gdbtarget",
+            "request": "attach",
+            "cwd": "${workspaceFolder}/",
+            "program": "Objects/mdk_demo.axf",
+            "gdb": "arm-none-eabi-gdb",
+            "auxiliaryGdb": true,
+            "initCommands": [
+                ""
+            ],
+            "customResetCommands": [
+                "monitor reset halt",
+                "maintenance flush register-cache",
+                "maintenance flush dcache",
+                "tbreak main",
+                "continue"
+            ],
+            "target": {
+                "port": "3333"
+            },
+            "cmsis": {
+                "cbuildRunFile": "${command:cmsis-csolution.getCbuildRunFile}",
+                "updateConfiguration": "auto"
+            }
+        }
+    ]
+}
+// {

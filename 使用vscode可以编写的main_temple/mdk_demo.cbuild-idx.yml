@@ -1,0 +1,16 @@
+build-idx:
+  generated-by: csolution version 2.13.0+p3-g40b6564e
+  csolution: mdk_demo.csolution.yml
+  cbuild-run: Objects/mdk_demo+Target_1.cbuild-run.yml
+  tmpdir: tmp
+  cprojects:
+    - cproject: mdk_demo.cproject.yml
+  cbuilds:
+    - cbuild: Objects/mdk_demo+Target_1.cbuild.yml
+      project: mdk_demo
+      configuration: +Target_1
+      messages:
+        info:
+          - mdk_demo.cbuild-pack.yml - file is already up-to-date
+          - mdk_demo+Target_1.cbuild-run.yml - file generated successfully
+          - mdk_demo+Target_1.cbuild.yml - file generated successfully

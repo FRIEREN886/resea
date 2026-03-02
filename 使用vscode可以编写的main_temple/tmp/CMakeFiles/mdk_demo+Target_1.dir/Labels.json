@@ -1,0 +1,52 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/32991/Desktop/mian/tmp/CMakeFiles/mdk_demo+Target_1"
+		},
+		{
+			"file" : "C:/Users/32991/Desktop/mian/tmp/CMakeFiles/mdk_demo+Target_1.rule"
+		},
+		{
+			"file" : "C:/Users/32991/Desktop/mian/tmp/CMakeFiles/mdk_demo+Target_1-complete.rule"
+		},
+		{
+			"file" : "C:/Users/32991/Desktop/mian/tmp/mdk_demo+Target_1/src/mdk_demo+Target_1-stamp/mdk_demo+Target_1-build.rule"
+		},
+		{
+			"file" : "C:/Users/32991/Desktop/mian/tmp/mdk_demo+Target_1/src/mdk_demo+Target_1-stamp/mdk_demo+Target_1-configure.rule"
+		},
+		{
+			"file" : "C:/Users/32991/Desktop/mian/tmp/mdk_demo+Target_1/src/mdk_demo+Target_1-stamp/mdk_demo+Target_1-database.rule"
+		},
+		{
+			"file" : "C:/Users/32991/Desktop/mian/tmp/mdk_demo+Target_1/src/mdk_demo+Target_1-stamp/mdk_demo+Target_1-download.rule"
+		},
+		{
+			"file" : "C:/Users/32991/Desktop/mian/tmp/mdk_demo+Target_1/src/mdk_demo+Target_1-stamp/mdk_demo+Target_1-executes.rule"
+		},
+		{
+			"file" : "C:/Users/32991/Desktop/mian/tmp/mdk_demo+Target_1/src/mdk_demo+Target_1-stamp/mdk_demo+Target_1-install.rule"
+		},
+		{
+			"file" : "C:/Users/32991/Desktop/mian/tmp/mdk_demo+Target_1/src/mdk_demo+Target_1-stamp/mdk_demo+Target_1-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/32991/Desktop/mian/tmp/mdk_demo+Target_1/src/mdk_demo+Target_1-stamp/mdk_demo+Target_1-patch.rule"
+		},
+		{
+			"file" : "C:/Users/32991/Desktop/mian/tmp/mdk_demo+Target_1/src/mdk_demo+Target_1-stamp/mdk_demo+Target_1-test.rule"
+		},
+		{
+			"file" : "C:/Users/32991/Desktop/mian/tmp/mdk_demo+Target_1/src/mdk_demo+Target_1-stamp/mdk_demo+Target_1-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"mdk_demo+Target_1"
+		],
+		"name" : "mdk_demo+Target_1"
+	}
+}

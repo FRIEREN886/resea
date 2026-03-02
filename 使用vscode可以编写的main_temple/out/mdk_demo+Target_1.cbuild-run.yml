@@ -1,0 +1,157 @@
+cbuild-run:
+  generated-by: csolution version 2.13.0+p3-g40b6564e
+  solution: ../mdk_demo.csolution.yml
+  target-type: Target_1
+  target-set: <default>
+  compiler: AC6
+  device: Renesas::R7FA6M5BF
+  device-pack: Renesas::RA_DFP@4.6.0
+  output:
+    - file: mdk_demo/Target_1/mdk_demo.axf
+      info: generate by mdk_demo+Target_1
+      type: elf
+      load: image+symbols
+  system-resources:
+    memory:
+      - name: Flash
+        access: rx
+        start: 0x00000000
+        size: 0x00100000
+        from-pack: Renesas::RA_DFP@4.6.0
+      - name: DataFlash
+        access: r
+        start: 0x08000000
+        size: 0x00002000
+        from-pack: Renesas::RA_DFP@4.6.0
+      - name: ConfigROM
+        access: r
+        start: 0x0100A000
+        size: 0x00000300
+        from-pack: Renesas::RA_DFP@4.6.0
+      - name: SRAM1
+        access: rwx
+        start: 0x20000000
+        size: 0x00040000
+        from-pack: Renesas::RA_DFP@4.6.0
+  system-descriptions:
+    - file: ${CMSIS_PACK_ROOT}/Renesas/RA_DFP/4.6.0/SVD/R7FA6M5BH.svd
+      type: svd
+  debugger:
+    name: CMSIS-DAP@pyOCD
+    protocol: swd
+    clock: 10000000
+    dbgconf: ../.cmsis/mdk_demo+Target_1.dbgconf
+    gdbserver:
+      - port: 3333
+  debug-vars:
+    vars: |
+      __var TRCK_value      = 0x00000001;   // Trace Clock operating frequency /1
+  debug-sequences:
+    - name: EnableTraceClock
+      blocks:
+        - execute: |
+            Write16( 0x4001E3FE, 0xA501 ) ;  // set PRCR, bit PRC0
+            Write8( 0x4001E03F, 0x80 | TRCK_value ) ;  // set TRCKCR, bit TRCKEN and TRCK[]
+            Write16( 0x4001E3FE, 0xA500 ) ;  // clear PRCR, bit PRC0
+    - name: DebugDeviceUnlock
+      blocks:
+        - execute: |
+            __var trace_enabled = ( __traceout & 0x3 ) != 0 ; // TPIU or SWO Trace Selected?
+        - if: trace_enabled
+          execute: |
+            Sequence("EnableTraceClock");
+    - name: ConfigureTraceTPIUPins
+      blocks:
+        - execute: |
+            __var parallel_trace_port_size = ( __traceout & 0x003F0000 ) >> 16 ;
+            Write8( 0x40080D03, 0x00 ) ;  // clear PWPR, bit B0WI
+            Write8( 0x40080D03, 0x40 ) ;  // set PWPR, bit PFSWE
+            Write32( 0x400808B8, 0x1A010C00 ) ;  // P214: TCLK
+        - info: TPIU port width 1
+          if: parallel_trace_port_size >= 1
+          execute: |
+            Write32( 0x400808AC, 0x1A010C00 ) ;  // P211: TDATA0
+        - info: TPIU port width 2
+          if: parallel_trace_port_size >= 2
+          execute: |
+            Write32( 0x400808A8, 0x1A010C00 ) ;  // P210: TDATA1
+        - info: TPIU port width 4
+          if: parallel_trace_port_size >= 4
+          execute: |
+            Write32( 0x400808A4, 0x1A010C00 ) ;  // P209: TDATA2
+            Write32( 0x400808A0, 0x1A010C00 ) ;  // P208: TDATA3
+        - execute: |
+            Write8( 0x40080D03, 0x00);  // clear PWPR, bit PFSWE
+            Write8( 0x40080D03, 0x80);  // set PWPR, bit B0WI
+    - name: TraceStart
+      blocks:
+        - execute: |
+            __var tpiu_trace_enabled = ( __traceout & 0x2 ) != 0 ; // TPIU Trace Selected?
+            Sequence( "EnableTraceClock" ) ;
+        - if: tpiu_trace_enabled
+          execute: |
+            Sequence( "ConfigureTraceTPIUPins" ) ;
+  programming:
+    - algorithm: ${CMSIS_PACK_ROOT}/Renesas/RA_DFP/4.6.0/Flash/RA6M5_1M.FLM
+      start: 0x00000000
+      size: 0x00100000
+      ram-start: 0x20000000
+      ram-size: 0x00002000
+    - algorithm: ${CMSIS_PACK_ROOT}/Renesas/RA_DFP/4.6.0/Flash/RA6M5_DATA_C1M.FLM
+      start: 0x08000000
+      size: 0x00002000
+      ram-start: 0x20000000
+      ram-size: 0x00002000
+    - algorithm: ${CMSIS_PACK_ROOT}/Renesas/RA_DFP/4.6.0/Flash/RA6M5_CONF.FLM
+      start: 0x0100A000
+      size: 0x00000300
+      ram-start: 0x20000000
+      ram-size: 0x00002000
+  debug-topology:
+    debugports:
+      - dpid: 0
+        accessports:
+          - apid: 0
+            index: 0
+            datapatch:
+              - address: 0xE0040FCC
+                value: 0x00000011
+                info: DEVTYPE
+              - address: 0xE0040FF0
+                value: 0x0000000D
+                info: CIDR0
+              - address: 0xE0040FF4
+                value: 0x00000090
+                info: CIDR1
+              - address: 0xE0040FF8
+                value: 0x00000005
+                info: CIDR2
+              - address: 0xE0040FFC
+                value: 0x000000B1
+                info: CIDR3
+              - address: 0xE0040FD0
+                value: 0x00000004
+                info: PIDR4
+              - address: 0xE0040FD4
+                value: 0x00000000
+                info: PIDR5
+              - address: 0xE0040FD8
+                value: 0x00000000
+                info: PIDR6
+              - address: 0xE0040FDC
+                value: 0x00000000
+                info: PIDR7
+              - address: 0xE0040FE0
+                value: 0x00000021
+                info: PIDR0
+              - address: 0xE0040FE4
+                value: 0x000000BD
+                info: PIDR1
+              - address: 0xE0040FE8
+                value: 0x0000000B
+                info: PIDR2
+              - address: 0xE0040FEC
+                value: 0x00000000
+                info: PIDR3 (ECOREVNUM)
+    processors:
+      - apid: 0

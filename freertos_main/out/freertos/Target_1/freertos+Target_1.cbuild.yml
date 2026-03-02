@@ -1,0 +1,123 @@
+build:
+  generated-by: csolution version 2.13.0+p3-g40b6564e
+  solution: ../../../freertos.csolution.yml
+  project: ../../../freertos.cproject.yml
+  context: freertos+Target_1
+  compiler: AC6
+  device: Renesas::R7FA6M5BF
+  device-pack: Renesas::RA_DFP@4.6.0
+  dbgconf:
+    - file: ../../../.cmsis/freertos+Target_1.dbgconf
+      version: 0.0.0
+  processor:
+    dsp: on
+    endian: little
+    fpu: sp
+    trustzone: non-secure
+    core: Cortex-M33
+  packs:
+    - pack: Renesas::RA_DFP@4.6.0
+      path: ${CMSIS_PACK_ROOT}/Renesas/RA_DFP/4.6.0
+  optimize: debug
+  debug: on
+  misc:
+    ASM:
+      - -masm=auto
+    C:
+      - -std=c99
+      - -fno-rtti
+      - -funsigned-char
+      - -ffunction-sections
+      - -Wno-license-management -Wunused -Wuninitialized -Wall -Wextra -Wmissing-declarations -Wconversion -Wpointer-arith -Wshadow -Waggregate-return -Wfloat-equal
+    CPP:
+      - -xc++
+      - -std=c++11
+      - -fno-exceptions
+      - -fno-rtti
+      - -funsigned-char
+      - -ffunction-sections
+      - -Wno-license-management -Wunused -Wuninitialized -Wall -Wextra -Wmissing-declarations -Wconversion -Wpointer-arith -Wshadow -Waggregate-return -Wfloat-equal
+    Link:
+      - --library_type=microlib
+      - --map
+      - --load_addr_map_info
+      - --xref
+      - --callgraph
+      - --symbols
+      - --info sizes
+      - --info totals
+      - --info unused
+      - --info veneers
+      - --entry=Reset_Handler --no_startup --via=".\script\ac6\fsp_keep.via"
+      - --diag_suppress=6319,6314
+      - --summary_stderr
+      - --info summarysizes
+  define:
+    - __MICROLIB
+    - _RTE_
+  define-asm:
+    - __MICROLIB
+    - _RTE_
+  add-path:
+    - ../../../applications
+    - ../../../drivers
+    - ../../../main
+    - ../../../RTE/_Target_1
+  add-path-asm:
+    - ../../../RTE/_Target_1
+  output-dirs:
+    intdir: ../../../tmp
+    outdir: .
+    rtedir: ../../../RTE
+  output:
+    - type: elf
+      file: freertos.axf
+    - type: comp-db
+      file: compile_commands.json
+  components:
+    - component: Renesas::Flex Software:RA Configuration@1.0.0
+      condition: RA Device
+      from-pack: Renesas::RA_DFP@4.6.0
+      selected-by: Renesas::Flex Software:RA Configuration
+      files:
+        - file: ${CMSIS_PACK_ROOT}/Renesas/RA_DFP/4.6.0/dummy.txt
+          category: other
+          version: 1.0.0
+      generator:
+        id: Renesas RA Smart Configurator
+        from-pack: Renesas::RA_DFP@4.6.0
+  generators:
+    - generator: Renesas RA Smart Configurator
+      from-pack: Renesas::RA_DFP@4.6.0
+      path: ../../../generated/Renesas RA Smart Configurator
+      gpdsc: ../../../generated/Renesas RA Smart Configurator/buildinfo.gpdsc
+      command:
+        win:
+          file: ${CMSIS_PACK_ROOT}/Renesas/RA_DFP/4.6.0/launcher/rasc_launcher.bat
+          arguments:
+            - "\"C:/Users/32991/Desktop/0501_freertos/rasc_version.txt\""
+            - "\"C:/Users/32991/Desktop/0501_freertos/configuration.xml\""
+  linker:
+    script: ../../../script/fsp.scat
+  groups:
+    - group: Drivers
+      files:
+        - file: ../../../drivers/drv_gpio.c
+          category: sourceC
+        - file: ../../../drivers/drv_uart.c
+          category: sourceC
+    - group: main_code
+      files:
+        - file: ../../../main/BSP_IIC_EEPROM.c
+          category: sourceC
+        - file: ../../../main/BSP_IIC_EEPROM.h
+          category: header
+  constructed-files:
+    - file: ../../../RTE/_Target_1/RTE_Components.h
+      category: header
+  licenses:
+    - license: <unknown>
+      packs:
+        - pack: Renesas::RA_DFP@4.6.0
+      components:
+        - component: Renesas::Flex Software:RA Configuration@1.0.0

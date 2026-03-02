@@ -1,0 +1,21 @@
+1 out of 1 target(s) converted
+
+Created solution: C:/Users/32991/Desktop/mian/mdk_demo.csolution.yml
+
+With projects:
+
+- C:/Users/32991/Desktop/mian/mdk_demo.cproject.yml
+
+Error: 0 error(s), 2 warning(s):
+
+Warnings:
+
+	The target "Target 1" is configured with following user commands which should be run manually:
+
+            After Build/Rebuild
+
+                cmd /c "start "Renesas" /w cmd /c ""$Slauncher\rasc_launcher.bat" "$Prasc_version.txt" -nosplash --launcher.suppressErrors --gensmartbundle --compiler ARMv6 "$Pconfiguration.xml" "$L%L" 2> "%%TEMP%%\rasc_stderr.out"""
+
+
+
+	Target name changed from 'Target 1' to 'Target_1'

@@ -1,0 +1,25 @@
+CompileFlags:
+  CompilationDatabase: c:\Users\32991\Desktop\0501_freertos\out\freertos\Target_1
+  Add:
+  - '--target=arm-arm-none-eabi'
+  - '-mcpu=cortex-m33+dsp'
+  - '-mfpu=fpv5-sp-d16'
+  - '-mfloat-abi=hard'
+  - '-Ic:\Users\32991\Desktop\0501_freertos\ra\fsp\inc'
+  - '-Ic:\Users\32991\Desktop\0501_freertos\ra\fsp\inc\api'
+  - '-Ic:\Users\32991\Desktop\0501_freertos\ra\fsp\inc\instances'
+  - '-Ic:\Users\32991\Desktop\0501_freertos\ra\arm\CMSIS_5\CMSIS\Core\Include'
+  - '-Ic:\Users\32991\Desktop\0501_freertos\ra_cfg\fsp_cfg'
+  - '-Ic:\Users\32991\Desktop\0501_freertos\ra_cfg\fsp_cfg\bsp'
+  - '-Ic:\Users\32991\Desktop\0501_freertos\ra_cfg\aws'
+  - '-Ic:\Users\32991\Desktop\0501_freertos\ra_gen'
+  - '-Ic:\Users\32991\Desktop\0501_freertos\RTE\_Target_1'
+  - '-Ic:\Users\32991\Desktop\0501_freertos\applications'
+  - '-Ic:\Users\32991\Desktop\0501_freertos\drivers'
+  - '-Ic:\Users\32991\Desktop\0501_freertos\main'
+  - '-Ic:\Users\32991\Desktop\0501_freertos\src'
+  - >-
+    -Ic:\Users\32991\Desktop\0501_freertos\ra\aws\FreeRTOS\FreeRTOS\Source\include
+  - '-Ic:\Users\32991\Desktop\0501_freertos\ra\fsp\src\rm_freertos_port'
+  - '-D__MICROLIB'
+  - '-D_RTE_'

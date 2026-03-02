@@ -1,0 +1,12 @@
+CMake Error at CMakeLists.txt:99 (target_link_options):
+  Syntax error in cmake code at
+
+    C:/Users/32991/Desktop/0501_freertos/tmp/freertos+Target_1/CMakeLists.txt:113
+
+  when parsing string
+
+    SHELL:--entry=Reset_Handler --no_startup --via=\".\script\ac6\fsp_keep.via\"
+
+  Invalid character escape '\s'.
+
+

@@ -1,0 +1,59 @@
+project:
+  packs:
+    - pack: Renesas::RA_DFP@^4.5.0
+  setups:
+    - setup: Options for Target_1
+      processor:
+        fpu: sp
+        trustzone: non-secure
+      add-path:
+        - applications
+        - drivers
+        - main
+      debug: "on"
+      define:
+        - __MICROLIB
+      define-asm:
+        - __MICROLIB
+      misc:
+        - C:
+            - -std=c99
+          C-CPP:
+            - -fno-rtti
+            - -funsigned-char
+            - -ffunction-sections
+            - -Wno-license-management -Wunused -Wuninitialized -Wall -Wextra -Wmissing-declarations -Wconversion -Wpointer-arith -Wshadow -Waggregate-return -Wfloat-equal
+          CPP:
+            - -xc++
+            - -std=c++11
+            - -fno-exceptions
+          ASM:
+            - -masm=auto
+          Link:
+            - --library_type=microlib
+            - --map
+            - --load_addr_map_info
+            - --xref
+            - --callgraph
+            - --symbols
+            - --info sizes
+            - --info totals
+            - --info unused
+            - --info veneers
+            - --entry=Reset_Handler --no_startup --via=".\script\ac6\fsp_keep.via"
+            - --diag_suppress=6319,6314
+            - --summary_stderr
+            - --info summarysizes
+  linker:
+    - script: script/fsp.scat
+  groups:
+    - group: Drivers
+      files:
+        - file: drivers/drv_gpio.c
+        - file: drivers/drv_uart.c
+    - group: main_code
+      files:
+        - file: main/BSP_IIC_EEPROM.c
+        - file: main/BSP_IIC_EEPROM.h
+  components:
+    - component: Renesas::Flex Software:RA Configuration

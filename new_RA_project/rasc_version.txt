@@ -1,0 +1,3 @@
+# RASC version and installation file
+4.5.0
+D:\FSP_RASC\eclipse\rasc.exe

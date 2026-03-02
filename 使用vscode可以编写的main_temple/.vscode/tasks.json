@@ -1,0 +1,187 @@
+{
+    //     "version": "2.0.0",
+    //     "tasks": [
+    //         {
+    //             "label": "CMSIS Load+Run",
+    //             "problemMatcher": [],
+    //             "type": "shell",
+    //             "command": "uVision runs on Windows only",
+    //             "windows": {
+    //                 "command": "d:/UVsion5.32/Core/UV4/UV4.exe",
+    //                 "options": {
+    //                     "cwd": "${workspaceFolder}/",
+    //                     "shell": {
+    //                         "executable": "cmd.exe",
+    //                         "args": [
+    //                             "/d",
+    //                             "/c"
+    //                         ]
+    //                     }
+    //                 }
+    //             },
+    //             "args": [
+    //                 "${command:cmsis-csolution.getSolutionFile}"
+    //             ]
+    //         }
+    //     ]
+    // }
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Start PyOCD",
+            "type": "shell",
+            "command": "pyocd",
+            "args": [
+                "gdbserver",
+                "--target",
+                "r7fa6m5bf",
+                "--pack",
+                "D:/Renesas_E2S_Pyocd/Renesas.RA_DFP.4.5.0.pack",
+                "--port",
+                "3333"
+            ],
+            "isBackground": true,
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": "."
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": ".*",
+                    "endsPattern": "GDB server listening.*"
+                }
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "focus": false
+            }
+        },
+        {
+            "label": "Stop PyOCD",
+            "type": "process",
+            "command": "taskkill",
+            "args": [
+                "/F",
+                "/IM",
+                "pyocd.exe"
+            ],
+            "windows": {
+                "command": "taskkill",
+                "args": [
+                    "/F",
+                    "/IM",
+                    "pyocd.exe"
+                ]
+            }
+        },
+        {
+            "label": "CMSIS Erase",
+            "type": "shell",
+            "command": "pyocd",
+            "options": {
+                "cwd": "${workspaceFolder}/",
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": [
+                        "/d",
+                        "/c"
+                    ]
+                }
+            },
+            "args": [
+                "erase",
+                "--probe",
+                "cmsisdap:",
+                "--chip",
+                "--cbuild-run",
+                "${command:cmsis-csolution.getCbuildRunFile}"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "CMSIS Load",
+            "type": "shell",
+            "command": "pyocd",
+            "options": {
+                "cwd": "${workspaceFolder}/",
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": [
+                        "/d",
+                        "/c"
+                    ]
+                }
+            },
+            "args": [
+                "load",
+                "--probe",
+                "cmsisdap:",
+                "--cbuild-run",
+                "${command:cmsis-csolution.getCbuildRunFile}"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "CMSIS Run",
+            "type": "shell",
+            "command": "pyocd",
+            "options": {
+                "cwd": "${workspaceFolder}/",
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": [
+                        "/d",
+                        "/c"
+                    ]
+                }
+            },
+            "args": [
+                "gdbserver",
+                "--probe",
+                "cmsisdap:",
+                "--connect",
+                "attach",
+                "--persist",
+                "--reset-run",
+                "--cbuild-run",
+                "${command:cmsis-csolution.getCbuildRunFile}",
+                "--quiet",
+                "--log",
+                "*.cbuild_run,*server=info"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "CMSIS Load+Run",
+            "dependsOn": [
+                "CMSIS Load",
+                "CMSIS Run"
+            ],
+            "dependsOrder": "sequence",
+            "problemMatcher": []
+        },
+        {
+            "label": "CMSIS TargetInfo",
+            "type": "shell",
+            "command": "pyocd",
+            "options": {
+                "cwd": "${workspaceFolder}/",
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": [
+                        "/d",
+                        "/c"
+                    ]
+                }
+            },
+            "args": [
+                "list",
+                "--cbuild-run",
+                "${command:cmsis-csolution.getCbuildRunFile}"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}
+// {

@@ -1,0 +1,18 @@
+build-idx:
+  generated-by: csolution version 2.13.0+p3-g40b6564e
+  csolution: freertos.csolution.yml
+  tmpdir: tmp
+  cprojects:
+    - cproject: freertos.cproject.yml
+  cbuilds:
+    - cbuild: out/freertos/Target_1/freertos+Target_1.cbuild.yml
+      project: freertos
+      configuration: +Target_1
+      errors: true
+      messages:
+        errors:
+          - "buildinfo.gpdsc - context 'freertos+Target_1' generator 'Renesas RA Smart Configurator' from component 'Renesas::Flex Software:RA Configuration@1.0.0': reading gpdsc failed"
+          - processing context 'freertos+Target_1' failed
+        info:
+          - freertos.cbuild-pack.yml - file is already up-to-date
+          - freertos+Target_1.cbuild.yml - file is already up-to-date
