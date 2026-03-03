@@ -1,0 +1,537 @@
+<html>
+<body>
+<pre>
+<h1>�Vision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ��Vision V5.43.1.0
+Copyright (C) 2025 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 1 frieren
+1
+User-based license: Keil MDK Community (non-commercial free of charge)
+Valid until: Jun 1 2033. Cached until: Mar 10 2026
+ 
+Tool Versions:
+Toolchain:       Keil MDK Community (non-commercial free of charge  Version: 5.43.0.0
+Toolchain Path:  D:\UVsion5.32\Core\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.24
+Assembler:       Armasm.exe V6.24
+Linker/Locator:  ArmLink.exe V6.24
+Library Manager: ArmAr.exe V6.24
+Hex Converter:   FromElf.exe V6.24
+CPU DLL:         
+Dialog DLL:      
+Target DLL:      CMSIS_AGDI_V8M.DLL V1.8.8.0
+Dialog DLL:      TCM.DLL V1.56.6.0
+ 
+<h2>Project:</h2>
+C:\Users\32991\Desktop\new_RA_project\mdk_demo.uvprojx
+Project File Date:  03/03/2026
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.24', folder: 'D:\UVsion5.32\Core\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+main/BSP_BQ76920_I2C.c(1): warning: In file included from...
+main\BSP_BQ76920_I2C.h(4): warning: In file included from...
+main\BQ76920_REG.h(636): error: use of undeclared identifier 'BMS_CELL_MAX'
+  636 |         float CellVoltage[BQ769X0_CELL_MAX];    // <B5><A5><BD>ڵ<E7>о<B5><E7>ѹ
+      |                           ^
+main\BQ76920_REG.h(33): note: expanded from macro 'BQ769X0_CELL_MAX'
+   33 | #define BQ769X0_CELL_MAX        BMS_CELL_MAX    // <D7><EE><B4><F3>֧<B3>ֶ<E0><C9>ٴ<AE>
+      |                                 ^
+main\BQ76920_REG.h(637): error: use of undeclared identifier 'BMS_TEMP_MAX'
+  637 |         float TsxTemperature[BQ769X0_TMEP_MAX]; // <C8><C8><C3><F4><B5><E7><D7><E8><CE>¶<C8>
+      |                              ^
+main\BQ76920_REG.h(34): note: expanded from macro 'BQ769X0_TMEP_MAX'
+   34 | #define BQ769X0_TMEP_MAX        BMS_TEMP_MAX    // <D7><EE><B6>༸·<CE>¶<C8>
+      |                                 ^
+main/BSP_BQ76920_I2C.c(180): error: call to undeclared library function 'malloc' with type 'void *(unsigned int)'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+  180 |     startData = (uint8_t *)BQ769X0_MALLOC(2 * length);
+      |                            ^
+main\BQ76920_REG.h(14): note: expanded from macro 'BQ769X0_MALLOC'
+   14 | #define BQ769X0_MALLOC(size)    malloc(size)
+      |                                 ^
+main/BSP_BQ76920_I2C.c(180): note: include the header <stdlib.h> or explicitly provide a declaration for 'malloc'
+main\BQ76920_REG.h(14): note: expanded from macro 'BQ769X0_MALLOC'
+   14 | #define BQ769X0_MALLOC(size)    malloc(size)
+      |                                 ^
+main/BSP_BQ76920_I2C.c(183): error: use of undeclared identifier 'TX_PRINTF_FLAG'
+  183 |         BQ769X0_WARNING("Malloc Fail"); 
+      |         ^
+main\BQ76920_REG.h(61): note: expanded from macro 'BQ769X0_WARNING'
+   61 |         TX_PRINTF_FLAG = 1; \
+      |         ^
+main/BSP_BQ76920_I2C.c(183): error: call to undeclared function 'print'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+main\BQ76920_REG.h(64): note: expanded from macro 'BQ769X0_WARNING'
+   64 |             print("[BQ769X0 WARNING]");                         \
+      |             ^
+main/BSP_BQ76920_I2C.c(183): note: did you mean 'printf'?
+main\BQ76920_REG.h(64): note: expanded from macro 'BQ769X0_WARNING'
+   64 |             print("[BQ769X0 WARNING]");                         \
+      |             ^
+D:\UVsion5.32\Core\ARM\ARMCLANG\bin\..\include\stdio.h(402): note: 'printf' declared here
+  402 | extern _ARMABI int printf(const char * __restrict /*format*/, ...) __attribute__((__nonnull__(1)));
+      |                    ^
+main/BSP_BQ76920_I2C.c(192): error: call to undeclared library function 'free' with type 'void (void *)'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+  192 |         BQ769X0_FREE(startData);
+      |         ^
+main\BQ76920_REG.h(15): note: expanded from macro 'BQ769X0_FREE'
+   15 | #define BQ769X0_FREE(rmem)              free(rmem)
+      |                                         ^
+main/BSP_BQ76920_I2C.c(192): note: include the header <stdlib.h> or explicitly provide a declaration for 'free'
+main\BQ76920_REG.h(15): note: expanded from macro 'BQ769X0_FREE'
+   15 | #define BQ769X0_FREE(rmem)              free(rmem)
+      |                                         ^
+main/BSP_BQ76920_I2C.c(193): error: use of undeclared identifier 'TX_PRINTF_FLAG'
+  193 |         BQ769X0_ERROR("Write Register Address Fail");
+      |         ^
+main\BQ76920_REG.h(54): note: expanded from macro 'BQ769X0_ERROR'
+   54 |          TX_PRINTF_FLAG = 1; \
+      |          ^
+main/BSP_BQ76920_I2C.c(193): error: call to undeclared function 'print'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+main\BQ76920_REG.h(57): note: expanded from macro 'BQ769X0_ERROR'
+   57 |             print("[BQ769X0 ERROR]");                   \
+      |             ^
+main/BSP_BQ76920_I2C.c(207): error: use of undeclared identifier 'TX_PRINTF_FLAG'
+  207 |         BQ769X0_ERROR("I2C Write Timeout");
+      |         ^
+main\BQ76920_REG.h(54): note: expanded from macro 'BQ769X0_ERROR'
+   54 |          TX_PRINTF_FLAG = 1; \
+      |          ^
+main/BSP_BQ76920_I2C.c(207): error: call to undeclared function 'print'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+main\BQ76920_REG.h(57): note: expanded from macro 'BQ769X0_ERROR'
+   57 |             print("[BQ769X0 ERROR]");                   \
+      |             ^
+main/BSP_BQ76920_I2C.c(218): error: use of undeclared identifier 'TX_PRINTF_FLAG'
+  218 |         BQ769X0_ERROR("Read Register Block Fail");
+      |         ^
+main\BQ76920_REG.h(54): note: expanded from macro 'BQ769X0_ERROR'
+   54 |          TX_PRINTF_FLAG = 1; \
+      |          ^
+main/BSP_BQ76920_I2C.c(218): error: call to undeclared function 'print'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+main\BQ76920_REG.h(57): note: expanded from macro 'BQ769X0_ERROR'
+   57 |             print("[BQ769X0 ERROR]");                   \
+      |             ^
+main/BSP_BQ76920_I2C.c(232): error: use of undeclared identifier 'TX_PRINTF_FLAG'
+  232 |         BQ769X0_ERROR("I2C Read Timeout");
+      |         ^
+main\BQ76920_REG.h(54): note: expanded from macro 'BQ769X0_ERROR'
+   54 |          TX_PRINTF_FLAG = 1; \
+      |          ^
+main/BSP_BQ76920_I2C.c(232): error: call to undeclared function 'print'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+main\BQ76920_REG.h(57): note: expanded from macro 'BQ769X0_ERROR'
+   57 |             print("[BQ769X0 ERROR]");                   \
+      |             ^
+main/BSP_BQ76920_I2C.c(248): error: use of undeclared identifier 'TX_PRINTF_FLAG'
+  248 |         BQ769X0_ERROR("Read Register Block CRC 1 Check Fail");
+      |         ^
+main\BQ76920_REG.h(54): note: expanded from macro 'BQ769X0_ERROR'
+   54 |          TX_PRINTF_FLAG = 1; \
+      |          ^
+main/BSP_BQ76920_I2C.c(248): error: call to undeclared function 'print'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+main\BQ76920_REG.h(57): note: expanded from macro 'BQ769X0_ERROR'
+   57 |             print("[BQ769X0 ERROR]");                   \
+      |             ^
+main/BSP_BQ76920_I2C.c(267): error: use of undeclared identifier 'TX_PRINTF_FLAG'
+  267 |             BQ769X0_ERROR("Read Register Block CRC Check Fail");
+      |             ^
+main\BQ76920_REG.h(54): note: expanded from macro 'BQ769X0_ERROR'
+   54 |          TX_PRINTF_FLAG = 1; \
+      |          ^
+main/BSP_BQ76920_I2C.c(267): error: call to undeclared function 'print'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+main\BQ76920_REG.h(57): note: expanded from macro 'BQ769X0_ERROR'
+   57 |             print("[BQ769X0 ERROR]");                   \
+      |             ^
+main/BSP_BQ76920_I2C.c(290): error: use of undeclared identifier 'TX_PRINTF_FLAG'
+  290 |         BQ769X0_ERROR("Write Register Address Fail");
+      |         ^
+main\BQ76920_REG.h(54): note: expanded from macro 'BQ769X0_ERROR'
+   54 |          TX_PRINTF_FLAG = 1; \
+      |          ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+compiling BSP_BQ76920_I2C.c...
+compiling pin_data.c...
+main/BQ76920_REG.c(1): warning: In file included from...
+main\BQ76920_REG.h(636): error: use of undeclared identifier 'BMS_CELL_MAX'
+  636 |         float CellVoltage[BQ769X0_CELL_MAX];    // <B5><A5><BD>ڵ<E7>о<B5><E7>ѹ
+      |                           ^
+main\BQ76920_REG.h(33): note: expanded from macro 'BQ769X0_CELL_MAX'
+   33 | #define BQ769X0_CELL_MAX        BMS_CELL_MAX    // <D7><EE><B4><F3>֧<B3>ֶ<E0><C9>ٴ<AE>
+      |                                 ^
+main\BQ76920_REG.h(637): error: use of undeclared identifier 'BMS_TEMP_MAX'
+  637 |         float TsxTemperature[BQ769X0_TMEP_MAX]; // <C8><C8><C3><F4><B5><E7><D7><E8><CE>¶<C8>
+      |                              ^
+main\BQ76920_REG.h(34): note: expanded from macro 'BQ769X0_TMEP_MAX'
+   34 | #define BQ769X0_TMEP_MAX        BMS_TEMP_MAX    // <D7><EE><B6>༸·<CE>¶<C8>
+      |                                 ^
+main/BQ76920_REG.c(96): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+   96 | static float RsnsValue= 0.005;          
+      |              ~~~~~~~~~  ^~~~~
+main/BQ76920_REG.c(166): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+  166 |                                         uiD = uiD - ((int)40) * (uiADCV-TemD[TemNK]) / (TemD[TemNK-1]-TemD[TemNK]);
+      |                                             ~ ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+main/BQ76920_REG.c(187): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+  187 |                                         uiD = uiD - ((int)40) * (uiADCV-TemD[TemNK]) / (TemD[TemNK-1]-TemD[TemNK]);
+      |                                             ~ ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+main/BQ76920_REG.c(201): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+  201 |                 uiD = uiD - ((int)40) * (uiADCV - TemD[TemNK]) / (TemD[TemNK-1] - TemD[TemNK]);
+      |                     ~ ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+main/BQ76920_REG.c(208): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+  208 |                 uiD = 0x8000 - uiD;
+      |                     ~ ~~~~~~~^~~~~
+main/BQ76920_REG.c(480): error: use of undeclared identifier 'BMS_CELL_MAX'
+  480 |         if (BQ769X0_ReadBlockWithCRC(VC1_HI_BYTE, &(Registers.VCell1.VCell1Byte.VC1_HI), BQ769X0_CELL_MAX << 1) != true)
+      |                                                                                          ^
+main\BQ76920_REG.h(33): note: expanded from macro 'BQ769X0_CELL_MAX'
+   33 | #define BQ769X0_CELL_MAX        BMS_CELL_MAX    // <D7><EE><B4><F3>֧<B3>ֶ<E0><C9>ٴ<AE>
+      |                                 ^
+main/BQ76920_REG.c(482): error: use of undeclared identifier 'TX_PRINTF_FLAG'
+  482 |                 BQ769X0_ERROR("Update Cell Voltage Fail");
+      |                 ^
+main\BQ76920_REG.h(54): note: expanded from macro 'BQ769X0_ERROR'
+   54 |          TX_PRINTF_FLAG = 1; \
+      |          ^
+main/BQ76920_REG.c(482): error: call to undeclared function 'print'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+main\BQ76920_REG.h(57): note: expanded from macro 'BQ769X0_ERROR'
+   57 |             print("[BQ769X0 ERROR]");                   \
+      |             ^
+main/BQ76920_REG.c(482): note: did you mean 'printf'?
+main\BQ76920_REG.h(57): note: expanded from macro 'BQ769X0_ERROR'
+   57 |             print("[BQ769X0 ERROR]");                   \
+      |             ^
+D:\UVsion5.32\Core\ARM\ARMCLANG\bin\..\include\stdio.h(402): note: 'printf' declared here
+  402 | extern _ARMABI int printf(const char * __restrict /*format*/, ...) __attribute__((__nonnull__(1)));
+      |                    ^
+main/BQ76920_REG.c(487): error: use of undeclared identifier 'BMS_CELL_MAX'
+  487 |         for (index = 0; index < BQ769X0_CELL_MAX; index++)
+      |                                 ^
+main\BQ76920_REG.h(33): note: expanded from macro 'BQ769X0_CELL_MAX'
+   33 | #define BQ769X0_CELL_MAX        BMS_CELL_MAX    // <D7><EE><B4><F3>֧<B3>ֶ<E0><C9>ٴ<AE>
+      |                                 ^
+main/BQ76920_REG.c(489): warning: implicit conversion loses integer precision: 'unsigned int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  489 |                 iTemp = (unsigned int)(*pRawADCData << 8) + *(pRawADCData + 1);
+      |                       ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+main/BQ76920_REG.c(490): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'unsigned long' [-Wsign-conversion]
+  490 |                 lTemp = ((unsigned long)iTemp * iGain) / 1000;
+      |                                               ~ ^~~~~
+main/BQ76920_REG.c(491): warning: implicit conversion changes signedness: 'int8_t' (aka 'signed char') to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+  491 |                 lTemp += Adcoffset;
+      |                       ~~ ^~~~~~~~~
+main/BQ76920_REG.c(511): error: use of undeclared identifier 'TX_PRINTF_FLAG'
+  511 |                         BQ769X0_ERROR("Update Tsx Temperature Fail");
+      |                         ^
+main\BQ76920_REG.h(54): note: expanded from macro 'BQ769X0_ERROR'
+   54 |          TX_PRINTF_FLAG = 1; \
+      |          ^
+main/BQ76920_REG.c(511): error: call to undeclared function 'print'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+main\BQ76920_REG.h(57): note: expanded from macro 'BQ769X0_ERROR'
+   57 |             print("[BQ769X0 ERROR]");                   \
+      |             ^
+main/BQ76920_REG.c(516): error: use of undeclared identifier 'BMS_TEMP_MAX'
+  516 |         if (BQ769X0_ReadBlockWithCRC(TS1_HI_BYTE, &(Registers.TS1.TS1Byte.TS1_HI), BQ769X0_TMEP_MAX << 1) != true)
+      |                                                                                    ^
+main\BQ76920_REG.h(34): note: expanded from macro 'BQ769X0_TMEP_MAX'
+   34 | #define BQ769X0_TMEP_MAX        BMS_TEMP_MAX    // <D7><EE><B6>༸·<CE>¶<C8>
+      |                                 ^
+main/BQ76920_REG.c(518): error: use of undeclared identifier 'TX_PRINTF_FLAG'
+  518 |                 BQ769X0_ERROR("Update Tsx Temperature Fail");
+      |                 ^
+main\BQ76920_REG.h(54): note: expanded from macro 'BQ769X0_ERROR'
+   54 |          TX_PRINTF_FLAG = 1; \
+      |          ^
+main/BQ76920_REG.c(518): error: call to undeclared function 'print'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+main\BQ76920_REG.h(57): note: expanded from macro 'BQ769X0_ERROR'
+   57 |             print("[BQ769X0 ERROR]");                   \
+      |             ^
+main/BQ76920_REG.c(522): error: use of undeclared identifier 'BMS_TEMP_MAX'
+  522 |         for(index = 0; index < BQ769X0_TMEP_MAX; index++)
+      |                                ^
+main\BQ76920_REG.h(34): note: expanded from macro 'BQ769X0_TMEP_MAX'
+   34 | #define BQ769X0_TMEP_MAX        BMS_TEMP_MAX    // <D7><EE><B6>༸·<CE>¶<C8>
+      |                                 ^
+main/BQ76920_REG.c(566): error: use of undeclared identifier 'TX_PRINTF_FLAG'
+  566 |                 BQ769X0_ERROR("Update Current Fail");
+      |                 ^
+main\BQ76920_REG.h(54): note: expanded from macro 'BQ769X0_ERROR'
+   54 |          TX_PRINTF_FLAG = 1; \
+      |          ^
+main/BQ76920_REG.c(566): error: call to undeclared function 'print'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+main\BQ76920_REG.h(57): note: expanded from macro 'BQ769X0_ERROR'
+   57 |             print("[BQ769X0 ERROR]");                   \
+      |             ^
+main/BQ76920_REG.c(579): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+  579 |         BQ769X0_SampleData.BatteryCurrent = ((temp * 8.44) / RsnsValue ) * 0.000001;
+      |                                           ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+main/BQ76920_REG.c(590): error: use of undeclared identifier 'TX_PRINTF_FLAG'
+  590 |                 BQ769X0_ERROR("Update Battery Voltage Fail");
+      |                 ^
+main\BQ76920_REG.h(54): note: expanded from macro 'BQ769X0_ERROR'
+   54 |          TX_PRINTF_FLAG = 1; \
+      |          ^
+main/BQ76920_REG.c(590): error: call to undeclared function 'print'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+main\BQ76920_REG.h(57): note: expanded from macro 'BQ769X0_ERROR'
+   57 |             print("[BQ769X0 ERROR]");                   \
+      |             ^
+main/BQ76920_REG.c(593): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  593 |         adc_value = Registers.VBat.VBatByte.BAT_HI << 8 | Registers.VBat.VBatByte.BAT_LO;
+      |                   ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+main/BQ76920_REG.c(595): error: use of undeclared identifier 'BMS_CELL_MAX'
+  595 |         BQ769X0_SampleData.BatteryVoltage += BQ769X0_CELL_MAX * Adcoffset; //unit is mV
+      |                                              ^
+main\BQ76920_REG.h(33): note: expanded from macro 'BQ769X0_CELL_MAX'
+   33 | #define BQ769X0_CELL_MAX        BMS_CELL_MAX    // <D7><EE><B4><F3>֧<B3>ֶ<E0><C9>ٴ<AE>
+      |                                 ^
+main/BQ76920_REG.c(662): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+  662 |         Gain = (ADCGAIN_BASE + ((Registers.ADCGain1.ADCGain1Byte & 0x0C) << 1) + ((Registers.ADCGain2.ADCGain2Byte & 0xE0)>> 5)) / 1000.0;
+      |              ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+main/BQ76920_REG.c(663): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+  663 |         iGain = ADCGAIN_BASE + ((Registers.ADCGain1.ADCGain1Byte & 0x0C) << 1) + ((Registers.ADCGain2.ADCGain2Byte & 0xE0)>> 5);
+      |               ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+main/BQ76920_REG.c(668): warning: implicit conversion loses integer precision: 'int' to 'int8_t' (aka 'signed char') [-Wimplicit-int-conversion]
+  668 |                 Adcoffset = 256 - (int16_t)Registers.ADCOffset * -1;
+      |                           ~ ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+main/BQ76920_REG.c(672): warning: implicit conversion changes signedness: 'uint8_t' (aka 'unsigned char') to 'int8_t' (aka 'signed char') [-Wsign-conversion]
+  672 |                 Adcoffset = Registers.ADCOffset;
+      |                           ~ ~~~~~~~~~~^~~~~~~~~
+main/BQ76920_REG.c(718): error: use of undeclared identifier 'TX_PRINTF_FLAG'
+  718 |                 BQ769X0_ERROR("BQ769X0 config register fail,Please reset BMS board");
+      |                 ^
+main\BQ76920_REG.h(54): note: expanded from macro 'BQ769X0_ERROR'
+   54 |          TX_PRINTF_FLAG = 1; \
+      |          ^
+main/BQ76920_REG.c(718): error: call to undeclared function 'print'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+main\BQ76920_REG.h(57): note: expanded from macro 'BQ769X0_ERROR'
+   57 |             print("[BQ769X0 ERROR]");                   \
+      |             ^
+main/BQ76920_REG.c(806): warning: implicit conversion loses integer precision: 'BQ769X0_SCDDelayTypedef' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  806 |         Registers.Protect1.Protect1Bit.SCD_DELAY = SCDDelay;
+      |                                                  ~ ^~~~~~~~
+main/BQ76920_REG.c(812): warning: implicit conversion loses integer precision: 'BQ769X0_OCDDelayTypedef' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  812 |         Registers.Protect2.Protect2Bit.OCD_DELAY = OCDDelay;
+      |                                                  ~ ^~~~~~~~
+main/BQ76920_REG.c(818): warning: implicit conversion loses integer precision: 'BQ769X0_UVDelayTypedef' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  818 |         Registers.Protect3.Protect3Bit.UV_DELAY = UVDelay;
+      |                                                 ~ ^~~~~~~
+main/BQ76920_REG.c(824): warning: implicit conversion loses integer precision: 'BQ769X0_OVDelayTypedef' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  824 |         Registers.Protect3.Protect3Bit.OV_DELAY = OVDelay;
+      |                                                 ~ ^~~~~~~
+main/BQ76920_REG.c(867): warning: implicit conversion loses integer precision: 'BQ769X0_SCDDelayTypedef' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  867 |         Registers.Protect1.Protect1Bit.SCD_DELAY  = InitData->ConfigData.SCDDelay;      
+      |                                                   ~ ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+main/BQ76920_REG.c(868): warning: implicit conversion loses integer precision: 'BQ769X0_OCDDelayTypedef' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  868 |         Registers.Protect2.Protect2Bit.OCD_DELAY  = InitData->ConfigData.OCDDelay;      
+      |                                                   ~ ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+main/BQ76920_REG.c(869): warning: implicit conversion loses integer precision: 'BQ769X0_OVDelayTypedef' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  869 |         Registers.Protect3.Protect3Bit.UV_DELAY   = InitData->ConfigData.UVDelay;       
+      |                                                   ~ ~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+main/BQ76920_REG.c(870): warning: implicit conversion loses integer precision: 'BQ769X0_UVDelayTypedef' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  870 |         Registers.Protect3.Protect3Bit.OV_DELAY   = InitData->ConfigData.OVDelay;
+      |                                                   ~ ~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+22 warnings and 20 errors generated.
+compiling BQ76920_REG.c...
+bms/BMS_APP.c(10): error: use of undeclared identifier 'BQ769X0_InitDataTypedef'
+   10 |         BQ769X0_InitDataTypedef InitData;
+      |         ^
+bms/BMS_APP.c(12): error: use of undeclared identifier 'InitData'
+   12 |         InitData.AlertOps.ocd    = BMS_ProtectHwOCD;
+      |         ^
+bms/BMS_APP.c(12): error: use of undeclared identifier 'BMS_ProtectHwOCD'
+   12 |         InitData.AlertOps.ocd    = BMS_ProtectHwOCD;
+      |                                    ^
+bms/BMS_APP.c(13): error: use of undeclared identifier 'InitData'
+   13 |         InitData.AlertOps.scd    = BMS_ProtectHwSCD;
+      |         ^
+bms/BMS_APP.c(13): error: use of undeclared identifier 'BMS_ProtectHwSCD'
+   13 |         InitData.AlertOps.scd    = BMS_ProtectHwSCD;
+      |                                    ^
+bms/BMS_APP.c(14): error: use of undeclared identifier 'InitData'
+   14 |         InitData.AlertOps.ov     = BMS_ProtectHwOV;
+      |         ^
+bms/BMS_APP.c(14): error: use of undeclared identifier 'BMS_ProtectHwOV'
+   14 |         InitData.AlertOps.ov     = BMS_ProtectHwOV;
+      |                                    ^
+bms/BMS_APP.c(15): error: use of undeclared identifier 'InitData'
+   15 |         InitData.AlertOps.uv     = BMS_ProtectHwUV;     
+      |         ^
+bms/BMS_APP.c(15): error: use of undeclared identifier 'BMS_ProtectHwUV'
+   15 |         InitData.AlertOps.uv     = BMS_ProtectHwUV;     
+      |                                    ^
+bms/BMS_APP.c(18): error: use of undeclared identifier 'InitData'
+   18 |         InitData.AlertOps.cc     = BMS_MonitorHwCurrent;
+      |         ^
+bms/BMS_APP.c(18): error: use of undeclared identifier 'BMS_MonitorHwCurrent'
+   18 |         InitData.AlertOps.cc     = BMS_MonitorHwCurrent;
+      |                                    ^
+bms/BMS_APP.c(24): error: use of undeclared identifier 'InitData'
+   24 |         InitData.AlertOps.device = BMS_ProtectHwDevice;
+      |         ^
+bms/BMS_APP.c(24): error: use of undeclared identifier 'BMS_ProtectHwDevice'
+   24 |         InitData.AlertOps.device = BMS_ProtectHwDevice;
+      |                                    ^
+bms/BMS_APP.c(25): error: use of undeclared identifier 'InitData'
+   25 |         InitData.AlertOps.ovrd   = BMS_ProtectHwOvrd;
+      |         ^
+bms/BMS_APP.c(25): error: use of undeclared identifier 'BMS_ProtectHwOvrd'
+   25 |         InitData.AlertOps.ovrd   = BMS_ProtectHwOvrd;
+      |                                    ^
+bms/BMS_APP.c(27): error: use of undeclared identifier 'InitData'
+   27 |         InitData.ConfigData.SCDDelay     = (BQ769X0_SCDDelayTypedef)INIT_SCD_DELAY;
+      |         ^
+bms/BMS_APP.c(27): error: use of undeclared identifier 'BQ769X0_SCDDelayTypedef'
+   27 |         InitData.ConfigData.SCDDelay     = (BQ769X0_SCDDelayTypedef)INIT_SCD_DELAY;
+      |                                             ^
+bms/BMS_APP.c(28): error: use of undeclared identifier 'InitData'
+   28 |         InitData.ConfigData.OCDDelay     = (BQ769X0_OCDDelayTypedef)INIT_OCD_DELAY;
+      |         ^
+bms/BMS_APP.c(28): error: use of undeclared identifier 'BQ769X0_OCDDelayTypedef'
+   28 |         InitData.ConfigData.OCDDelay     = (BQ769X0_OCDDelayTypedef)INIT_OCD_DELAY;
+      |                                             ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+compiling BMS_APP.c...
+".\Objects\mdk_demo.axf" - 57 Error(s), 22 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Renesas
+                
+                Renesas::Project Content@1.0.0
+                Project content managed by the Renesas Smart Configurator
+   * Component: Build Configuration Version: 
+   * Component: ra Version: 
+   * Component: Generated Data Version: 
+   * Component: Linker Script Version: 
+
+Package Vendor: Renesas
+                https://www2.renesas.eu/Keil_MDK_Packs/Renesas.RA_DFP.4.5.0.pack
+                Renesas::RA_DFP@4.5.0
+                Renesas RA series device family pack
+   * Component: RA Configuration Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  ./ra/arm/CMSIS_5/CMSIS/Core/Include
+  ./ra/fsp/inc
+  ./ra/fsp/inc/api
+  ./ra/fsp/inc/instances
+  ./ra_cfg/fsp_cfg
+  ./ra_cfg/fsp_cfg/bsp
+  ./ra_gen
+  C:/Users/32991/Desktop/new_RA_project
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: Renesas::Flex Software:Build Configuration
+      Include file:  ra_cfg/fsp_cfg/bsp/board_cfg.h
+      Include file:  ra_cfg/fsp_cfg/bsp/bsp_mcu_device_cfg.h
+      Include file:  ra_cfg/fsp_cfg/bsp/bsp_mcu_device_pn_cfg.h
+      Include file:  ra_cfg/fsp_cfg/bsp/bsp_pin_cfg.h
+      Include file:  ra_cfg/fsp_cfg/bsp/bsp_mcu_family_cfg.h
+      Include file:  ra_cfg/fsp_cfg/r_icu_cfg.h
+      Include file:  ra_cfg/fsp_cfg/bsp/bsp_cfg.h
+      Include file:  ra_cfg/fsp_cfg/r_ioport_cfg.h
+      Include file:  ra_cfg/fsp_cfg/r_sci_i2c_cfg.h
+      Include file:  ra_cfg/fsp_cfg/r_sci_uart_cfg.h
+
+   * Component: Renesas::Flex Software:Components:ra
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/core_sc300.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/mpu_armv7.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/mpu_armv8.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/cachel1_armv7.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/cmsis_armcc.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/cmsis_version.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/core_cm0.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/core_cm0plus.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/core_armv8mml.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/core_cm1.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/core_cm3.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/core_cm35p.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/core_cm7.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/core_armv81mml.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/core_starmc1.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/core_cm33.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/core_cm4.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/cmsis_armclang_ltm.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/cmsis_iccarm.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/core_armv8mbl.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/core_cm85.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/core_cm23.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/core_sc000.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/cmsis_armclang.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/cmsis_compiler.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/cmsis_gcc.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/core_cm55.h
+      Source file:   ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c
+      Source file:   ra/fsp/src/bsp/mcu/all/bsp_clocks.c
+      Include file:  ra/fsp/src/bsp/mcu/all/bsp_common.h
+      Include file:  ra/fsp/inc/api/r_transfer_api.h
+      Include file:  ra/fsp/inc/api/r_uart_api.h
+      Include file:  ra/fsp/inc/api/bsp_api.h
+      Include file:  ra/fsp/inc/instances/r_icu.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/pmu_armv8.h
+      Include file:  ra/fsp/inc/instances/r_sci_i2c.h
+      Include file:  ra/fsp/src/bsp/cmsis/Device/RENESAS/Include/R7FA6M5BH.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/tz_context.h
+      Include file:  ra/fsp/src/bsp/mcu/all/bsp_clocks.h
+      Include file:  ra/fsp/inc/api/fsp_common_api.h
+      Source file:   ra/fsp/src/bsp/mcu/all/bsp_delay.c
+      Source file:   ra/fsp/src/bsp/mcu/all/bsp_group_irq.c
+      Include file:  ra/fsp/inc/api/r_ioport_api.h
+      Include file:  ra/fsp/src/bsp/mcu/all/bsp_group_irq.h
+      Source file:   ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c
+      Include file:  ra/fsp/inc/api/r_external_irq_api.h
+      Include file:  ra/fsp/src/bsp/cmsis/Device/RENESAS/Include/renesas.h
+      Source file:   ra/fsp/src/bsp/mcu/all/bsp_common.c
+      Include file:  ra/fsp/src/bsp/mcu/all/bsp_compiler_support.h
+      Include file:  ra/fsp/src/bsp/mcu/all/bsp_delay.h
+      Include file:  ra/fsp/inc/instances/r_ioport.h
+      Include file:  ra/fsp/src/bsp/mcu/all/bsp_arm_exceptions.h
+      Include file:  ra/fsp/src/bsp/cmsis/Device/RENESAS/Include/system.h
+      Include file:  ra/fsp/inc/fsp_features.h
+      Include file:  ra/fsp/inc/fsp_version.h
+      Include file:  ra/fsp/inc/api/r_i2c_master_api.h
+      Include file:  ra/fsp/inc/instances/r_sci_uart.h
+      Include file:  ra/arm/CMSIS_5/CMSIS/Core/Include/pac_armv81.h
+      Source file:   ra/fsp/src/bsp/mcu/all/bsp_sbrk.c
+      Include file:  ra/fsp/src/bsp/mcu/ra6m5/bsp_elc.h
+      Source file:   ra/fsp/src/r_sci_i2c/r_sci_i2c.c
+      Include file:  ra/fsp/src/bsp/mcu/all/bsp_security.h
+      Source file:   ra/fsp/src/bsp/mcu/all/bsp_io.c
+      Include file:  ra/fsp/src/bsp/mcu/all/bsp_mcu_api.h
+      Include file:  ra/fsp/src/bsp/mcu/all/bsp_module_stop.h
+      Include file:  ra/fsp/src/bsp/mcu/ra6m5/bsp_mcu_info.h
+      Source file:   ra/fsp/src/r_ioport/r_ioport.c
+      Source file:   ra/fsp/src/bsp/mcu/all/bsp_security.c
+      Source file:   ra/fsp/src/bsp/mcu/all/bsp_register_protection.c
+      Include file:  ra/fsp/src/bsp/mcu/ra6m5/bsp_feature.h
+      Source file:   ra/fsp/src/bsp/mcu/all/bsp_irq.c
+      Source file:   ra/fsp/src/r_sci_uart/r_sci_uart.c
+      Include file:  ra/fsp/src/bsp/mcu/all/bsp_io.h
+      Include file:  ra/fsp/src/bsp/mcu/all/bsp_irq.h
+      Include file:  ra/fsp/src/bsp/mcu/all/bsp_register_protection.h
+      Source file:   ra/fsp/src/r_icu/r_icu.c
+      Include file:  ra/fsp/src/bsp/mcu/all/bsp_guard.h
+      Source file:   ra/fsp/src/bsp/mcu/all/bsp_rom_registers.c
+      Source file:   ra/fsp/src/bsp/mcu/all/bsp_guard.c
+      Include file:  ra/fsp/src/bsp/mcu/all/bsp_tfu.h
+
+   * Component: Renesas::Flex Software:Generated Data
+      Source file:   ra_gen/main.c
+      Include file:  ra_gen/vector_data.h
+      Source file:   ra_gen/common_data.c
+      Include file:  ra_gen/bsp_clock_cfg.h
+      Source file:   ra_gen/vector_data.c
+      Source file:   ra_gen/hal_data.c
+      Include file:  ra_gen/common_data.h
+      Include file:  ra_gen/hal_data.h
+      Source file:   ra_gen/pin_data.c
+
+   * Component: Renesas::Flex Software:Linker Script
+
+   * Component: Renesas::Flex Software:RA Configuration@1.0.0
+Target not created.
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
